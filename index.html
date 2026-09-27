@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A Little Sunflower Garden For You 🌻</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Partikel cahaya mengambang di background -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Tombol musik kecil, selalu mengambang di pojok -->
+  <button id="musicToggle" class="music-btn" title="Nyalakan musik">🔇</button>
+  <audio id="bgMusic" loop preload="none">
+    <!-- EDIT HERE: ganti assets/music.mp3 dengan file musikmu sendiri -->
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ============ 1. LANDING PAGE ============ -->
+  <section id="landing" class="section landing">
+    <div class="sky"></div>
+
+    <div class="scene" id="scene">
+      <div class="ground"></div>
+      <div class="stem" id="stem"></div>
+      <div class="leaf leaf-left" id="leafLeft"></div>
+      <div class="leaf leaf-right" id="leafRight"></div>
+      <div class="flower" id="heroFlower">
+        <div class="petals" id="heroPetals"></div>
+        <div class="flower-center"></div>
+      </div>
+    </div>
+
+    <p class="landing-text">
+      <!-- EDIT HERE: ini kalimat pembuka di landing page -->
+      Untuk seseorang yang selalu membawa sedikit cahaya.
+    </p>
+
+    <button class="btn-enter" id="enterGarden">Masuk ke taman 🌻</button>
+  </section>
+
+  <!-- ============ 2. SUNFLOWER GARDEN ============ -->
+  <section id="garden" class="section garden">
+    <h2 class="section-title">Taman Bunga Matahari</h2>
+    <p class="section-sub">Sentuh salah satu bunga di bawah ini~</p>
+
+    <div class="garden-field" id="gardenField">
+      <!-- Bunga-bunga akan otomatis dibuat oleh script.js -->
+    </div>
+  </section>
+
+  <!-- Kotak pesan saat bunga disentuh -->
+  <div class="message-overlay" id="messageOverlay">
+    <div class="message-box">
+      <p id="messageText"></p>
+      <button id="closeMessage">Tutup</button>
+    </div>
+  </div>
+
+  <!-- ============ 3. KENAPA BUNGA MATAHARI ============ -->
+  <section id="letter" class="section letter">
+    <div class="letter-card reveal">
+      <!-- EDIT HERE: teks surat kecil, bisa kamu ubah sesukamu -->
+      <p class="letter-line">Kenapa bunga matahari?</p>
+      <p class="letter-line">Karena bunga matahari selalu mencari cahaya.</p>
+      <p class="letter-line">Dan entah kenapa, setiap kali ngobrol sama kamu,</p>
+      <p class="letter-line">aku juga selalu menemukan alasan untuk tersenyum.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. TIMELINE / MEMORY ============ -->
+  <section id="timeline" class="section timeline">
+    <h2 class="section-title">Sepenggal Cerita Kita</h2>
+
+    <div class="timeline-list">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-photo">
+          <!-- EDIT HERE: ganti path foto di assets/photos/ -->
+          <img src="assets/photos/photo1.jpg" alt="Pertama kali kenal"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback">🌱</div>
+        </div>
+        <div class="timeline-text">
+          <span class="timeline-emoji">🌱</span>
+          <h3><!-- EDIT HERE -->Pertama kali kenal</h3>
+          <p><!-- EDIT HERE -->Di sinilah semuanya dimulai.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-photo">
+          <img src="assets/photos/photo2.jpg" alt="Pertama kali ngobrol"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback">🌻</div>
+        </div>
+        <div class="timeline-text">
+          <span class="timeline-emoji">🌻</span>
+          <h3><!-- EDIT HERE -->Pertama kali ngobrol</h3>
+          <p><!-- EDIT HERE -->Hal sederhana yang ternyata menjadi sesuatu yang berarti.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-photo">
+          <img src="assets/photos/photo3.jpg" alt="Momen favorit"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback">☀️</div>
+        </div>
+        <div class="timeline-text">
+          <span class="timeline-emoji">☀️</span>
+          <h3><!-- EDIT HERE -->Momen favorit</h3>
+          <p><!-- EDIT HERE -->Salah satu momen yang selalu aku ingat.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-photo">
+          <img src="assets/photos/photo4.jpg" alt="Hari ini"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback">💛</div>
+        </div>
+        <div class="timeline-text">
+          <span class="timeline-emoji">💛</span>
+          <h3><!-- EDIT HERE -->Hari ini</h3>
+          <p><!-- EDIT HERE -->Dan cerita ini masih terus berjalan.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 5. SURPRISE ============ -->
+  <section id="surpriseIntro" class="section surprise-intro">
+    <p class="surprise-hint reveal">Masih ada satu hal lagi...</p>
+    <button class="btn-surprise reveal" id="surpriseBtn">Buka ✨</button>
+  </section>
+
+  <section id="surpriseFinal" class="section surprise-final">
+    <div class="night-sky"></div>
+    <div class="stars" id="stars"></div>
+    <div class="final-garden" id="finalGarden"></div>
+
+    <div class="final-content">
+      <p class="final-text">
+        <!-- EDIT HERE: pesan penutup -->
+        Aku mungkin nggak bisa memberikan kamu satu kebun bunga matahari secara langsung.
+        <br><br>
+        Jadi untuk sekarang,<br>
+        aku bikin satu di sini,<br>
+        khusus untuk kamu. 🌻
+      </p>
+      <p class="final-text2">
+        <!-- EDIT HERE -->
+        Semoga setiap kali kamu melihat bunga matahari,
+        kamu selalu ingat bahwa ada seseorang yang berharap
+        hari-harimu selalu dipenuhi cahaya.
+      </p>
+
+      <button class="btn-restart" id="restartBtn">Ulangi dari awal ↻</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
